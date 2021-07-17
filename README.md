@@ -15,3 +15,6 @@ Now I am pushing it to github.
 5. You can delete your posts.
 6. User authentication is assured.
 7. You can view all your friends in home page.
+
+![alt text](https://user-images.githubusercontent.com/76950378/126046221-85a2d355-ab86-4f4e-b473-53910b538478.PNG)
+ 
