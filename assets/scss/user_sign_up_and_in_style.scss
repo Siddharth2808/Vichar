@@ -1,0 +1,34 @@
+.section-one {
+    background: linear-gradient(45deg, red -100%, blue 200%);
+    overflow: hidden; // no scrollbars..
+    height: 100%;
+	width: 100%;
+    box-sizing: border-box;
+    position:absolute;
+}
+
+.sign-up-logo
+{
+    background: -webkit-linear-gradient(0deg, #7700ff 31%, #ff0066 62%);
+	-webkit-background-clip: text;
+	background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size:25px;
+    padding:0px;
+}
+
+.section-two
+{
+    background-color: rgba(255, 255, 255, 0.8);
+	margin-top:3%;
+	color:black !important;
+	font-weight:bold;
+}
+
+h1.text-center
+{
+    font-size: 50px;
+}
+

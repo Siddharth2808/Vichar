@@ -1,0 +1,1 @@
+footer{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-start;align-items:center;background-color:#000;padding:50px 20px}footer div:first-child{height:10vw;width:26.71vw}footer div:first-child img{height:100%;width:100%}footer div:nth-child(2){height:100%;width:60%}footer a:hover{text-decoration:none!important}

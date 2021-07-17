@@ -1,0 +1,82 @@
+.card-body
+{
+    a
+    {
+        font-size:20px;
+        &:hover
+        {
+            color:red;
+        }
+    }
+}
+.card
+{
+    box-shadow: 0px 5px 10px 1px rgb(219, 219, 219);
+    transition:all ease-in-out 0.2s;
+    &:hover
+    {
+        box-shadow: 0px 0px 2px 1px rgb(240, 240, 240);
+    }
+}
+.row
+{
+    section:nth-child(3)
+    {
+        $sub-container-height:47%;
+        height:95vh;
+        overflow:hidden;
+        #friends-container
+        {
+            height:$sub-container-height;
+            overflow:scroll;
+            &::-webkit-scrollbar
+            {
+                display: none;;
+            }
+        }
+        #all-users-container
+        {
+            height:$sub-container-height;
+            overflow:scroll;
+            &::-webkit-scrollbar
+            {
+                display: none;;
+            }
+        }
+        a
+        {
+            &:hover
+            {
+                text-decoration: none;
+                color:red;
+            }
+        }
+        .badge
+        {
+            color:white;
+            &:hover
+            {
+                color:white;
+                cursor: pointer;
+            }
+        }
+        ul
+        {
+            overflow:scroll;
+            max-height:75vh;
+            &::-webkit-scrollbar
+            {
+                display: none;
+            }
+        }
+
+    }
+}
+.action-buttons
+{
+    cursor: pointer;
+}
+:root a:hover
+{
+    text-decoration: none;
+}

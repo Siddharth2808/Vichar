@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="row">
+        <section class="col-sm-3 mt-4">
+
+        </section>
+        <section id="feed-posts" class="col-sm-6 mt-4">
+            <%if(locals.user){%>
+            <form action="/posts/create" id="new-post-form" method="POST">
+                <div class="form-group mb-1">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols=1 name="content"
+                        placeholder="What's on your mind?" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary mb-2 float-right">Post</button>
+                </div>
+            </form>
+            <%}%>
+            <div id="posts-container">
+                <% itr=0; for(post of locals.posts){ %>
+            <%- include('_post') -%>
+            <%itr++;}%>
+    </div>
+
+    </section>
+
+    <section id="user-friends" class="col-sm-3 mt-4 pb-3 pt-3">
+        <div id="friends-container">
+            <h4>
+                Friends
+            </h4>
+            <ul class="list-group">
+                <%if(locals.friends.length==0){%>
+                <h6>Friends list is empty.</h6>
+                <%}%>
+                <%for(fr of locals.friends){%>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class='d-flex justify-content-around align-items-center'>
+                        <div style="height:40px;width:40px;border-radius: 50%;">
+                            <img src="<%=fr.friend_avatar%>" style="height:100%; width:100%; border-radius:inherit;">
+                        </div>
+                        <div class="ml-2">
+                            <a href="/users/profile/<%=fr.friend_id%>"><%=fr.friend_name%></a>
+                        </div>
+                    </div>
+                    <a class="badge badge-primary"><i class="fas fa-comment"></i></a>
+                </li>
+                <%}%>
+            </ul>
+        </div>
+
+        <hr>
+        
+        <div id="all-users-container">
+            <h4>
+                All Users
+            </h4>
+
+            <ul class="list-group">
+                <%for(u of locals.all_users){%>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/users/profile/<%=u.id%>"><%=u.name%></a>
+                </li>
+                <%}%>
+            </ul>
+        </div>    
+    </section>
+    <%-include('_chatbox')-%>
+        </div>
+</div>
+<script src="<%=assetPath('js/home_posts.js')%>"></script>
+<script src="<%=assetPath('js/home.js')%>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="<%=assetPath('js/chat_engine.js')%>"></script>
+<%if(locals.user){%>
+<script>
+    new ChatEngine('user-chatbox', "<%=locals.user.email %>")
+</script>
+<%}%>

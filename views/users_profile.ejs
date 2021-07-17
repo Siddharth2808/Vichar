@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="<%=assetPath('css/user_profiles.css')%>">
+
+<div class="container mt-3">
+    <div class="row">
+        <section class="col-sm-4 pb-2 pt-2">
+            <!-- profile picture -->
+            <div id="profile-picture" class="ml-auto mr-auto mt-2 mb-2">
+                <img src="<%=profile_user.avatar%>" alt="<%=profile_user.name%>">
+            </div>
+            <!-- name -->
+            <div class="text-center">
+                <h3><%=profile_user.name.charAt(0).toUpperCase() + profile_user.name.slice(1)%></h3>
+            </div>
+
+            <!-- update credentials -->
+            <div class="text-center">
+                <%if(profile_user.id==user.id){%>
+                    <!-- if user matches then show the form to change the details else only show the profile info -->
+        
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-warning mt-3" data-toggle="modal" data-target="#exampleModal">
+                        Update Credentials
+                    </button>
+        
+                    <!-- Modal /////////////////////////////////////////////////-->
+                    <div class="modal fade text-left" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- modal header -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Credentials</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <!-- form for modal -->
+                                <form action="/users/update/<%=profile_user.id%>" method="POST" enctype="multipart/form-data">
+                                    <!-- modal body -->
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="name">New Name</label>
+                                            <input type="text" class="form-control" id="name" aria-describedby="name"
+                                                name="name" value="<%=profile_user.name%>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">New Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" required
+                                                value="<%=profile_user.email%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="avatar">Upload Profile Picture</label>
+                                            <input type="file" name="avatar" class="form-control-file" id="avatar">
+                                        </div>
+                                    </div>
+                                    <!-- modeal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //////////////////////////////////////////////////////// -->
+        
+        
+        
+                    <%}else{%>
+                        <%if(!locals.are_friends){%>
+                            <a type="button" href="/users/profile/<%=profile_user._id%>/toggle_friend" id="add-friend" class="btn btn-primary text-white">Add Friend</a>
+                        <%}else{%>
+                            <a type="button" href="/users/profile/<%=profile_user._id%>/toggle_friend" class="btn btn-danger text-white">Remove Friend</a>
+                        <%}%>
+        
+                    <%}%>
+            </div>
+        </section>
+
+
+
+        <section class="col-sm-8 pb-2 pt-2">
+
+            
+        </section>
+    </div>
+</div>
