@@ -12,7 +12,7 @@ Now I am pushing it to github.
 2. You can like other's posts.
 ![alt text](https://user-images.githubusercontent.com/76950378/126046221-85a2d355-ab86-4f4e-b473-53910b538478.PNG)
 
-3. You canlike other's posts.
+3. You can comment on other's posts.
 4. You can search for posts and users.
 5. You can send friend requests or accept other's requests.
 6. You can delete your posts.
