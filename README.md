@@ -19,5 +19,7 @@ Now I am pushing it to github.
 7. User authentication is assured.
 8. You can view all your friends in home page.
 
+![alt text](https://user-images.githubusercontent.com/76950378/126046306-cc32ec2b-5ca9-4768-b5f9-c82aba8a1035.PNG)
+
 
  
